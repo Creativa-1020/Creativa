@@ -2,7 +2,7 @@
   "name": "partido-creativa-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/Creativa-1020/Creativa",
+  "homepage": "https://creativa-1020.github.io/Creativa/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
