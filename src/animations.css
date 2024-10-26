@@ -1,0 +1,88 @@
+@keyframes entrada-inicio-1 {
+     100%{
+          transform: translate(0);
+          opacity: 1;
+     }
+}
+
+.container header nav .logo-section{
+     opacity: 0;
+     transform: translateX(-300px);
+     animation: entrada-inicio-1 2s ease-in-out forwards;
+}
+
+.container header nav ul li{
+     transform: translateY(-100px);
+     animation: entrada-inicio-1 1s ease-in-out forwards; 
+}
+
+/* Inicio */
+
+/* Inicio 1  */
+
+.inicio .inicio-1 .information h1, .inicio .inicio-1 .information h3, .inicio .inicio-1 .information .carrusel-vertical, .inicio .inicio-1 .information a{
+     opacity: 0;
+     transform: translateX(-750px);
+     animation: entrada-inicio-1 2s ease-in-out forwards;
+}
+
+/* Inicio 2  */
+
+
+.inicio .inicio-2 h1{
+     opacity: 0;
+     transform: translateY(-200px);
+}
+
+.inicio .inicio-2.visible h1{
+     animation: entrada-inicio-1 1s ease-in-out forwards;
+}
+
+.inicio-2 .problematicas .problematica-1, .inicio-2 .problematicas .problematica-2{
+     transform: translateY(200px);
+     opacity: 0;
+}
+
+.inicio .inicio-2.visible .problematicas .problematica-1, .inicio .inicio-2.visible .problematicas .problematica-2{
+     animation: entrada-inicio-1 1s ease-in-out forwards;
+}
+
+/* Inicio 3  */
+
+.inicio-3 .information h1, .inicio-3 .information p{
+     transform: translateX(-1000px);
+     opacity: 0;
+}
+
+.inicio-3 .information.visible h1, .inicio-3 .information.visible p{
+     animation: entrada-inicio-1 2s ease-in-out forwards;
+}
+
+/* Inicio 4 */
+
+.inicio-4 .information h1{
+     transform: translateY(-100px);
+     opacity: 0;
+}
+
+.inicio-4 .information.visible h1{
+     animation: entrada-inicio-1 2s ease-in-out forwards;
+}
+
+.inicio-4 .information .propuestas:nth-child(even){
+     transform: translateX(600px);
+     opacity: 0;
+}
+
+.inicio-4 .information.visible .propuestas:nth-child(even){
+     animation: entrada-inicio-1 2s ease-in-out forwards;
+}
+
+.inicio-4 .information .propuestas:nth-child(odd){
+     transform: translateX(-600px);
+     opacity: 0;
+}
+
+.inicio-4 .information.visible .propuestas:nth-child(odd){
+     animation: entrada-inicio-1 2s ease-in-out forwards;
+}
