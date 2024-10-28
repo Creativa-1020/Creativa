@@ -1,5 +1,5 @@
 // src/App.js
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import './App.css'
 import './animations.css'
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
@@ -35,22 +35,22 @@ function App() {
               </div>
               <ul>
                 <li style={{animationDelay: "1s"}}>
-                  <Link to="/">Inicio</Link>
+                  <Link to="Creativa/">Inicio</Link>
                 </li>
                 <li style={{animationDelay: "1.3s"}}>
-                  <Link to="/about">Sobre Nosotros</Link>
+                  <Link to="Creativa/about">Sobre Nosotros</Link>
                 </li>
                 <li style={{animationDelay: "1.5s"}}>
-                  <Link to="/contact">Contactos</Link>
+                  <Link to="Creativa/contact">Contactos</Link>
                 </li>
               </ul>
             </nav>
         </header>
 
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contacto />} />
+            <Route path="Creativa/" element={<Home />} />
+            <Route path="Creativa/about" element={<About />} />
+            <Route path="Creativa/contact" element={<Contacto />} />
           </Routes>
 
           <footer>
@@ -64,13 +64,13 @@ function App() {
               <h3>Enlaces Rápidos</h3>
               <ul>
                 <li>
-                  <Link to="/">Inicio</Link>
+                  <Link to="Creativa/">Inicio</Link>
                 </li>
                 <li>
-                  <Link to="/about">Sobre Nosotros</Link>
+                  <Link to="Creativa/about">Sobre Nosotros</Link>
                 </li>
                 <li>
-                  <Link to="/contact">Contactos</Link>
+                  <Link to="Creativa/contact">Contactos</Link>
                 </li>
               </ul>
             </section>

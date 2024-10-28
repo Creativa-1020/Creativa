@@ -377,6 +377,87 @@ body{
   padding: 0 60px 60px 60px;
 }
 
+/* Sobre Nosotros */
+
+.sobre-nosotros{
+  width: 100%;
+  height: 100%;
+}
+
+.sobre-nosotros .sobre-nosotros-1{
+  width: 100%;
+  height: 100vh;
+  padding: 10px 60px;
+}
+
+.sobre-nosotros .sobre-nosotros-1 .display{
+  width: 100%;
+  height: 100%;
+}
+
+.sobre-nosotros .sobre-nosotros-1 .logo-atractivo{
+  background: url('./imagenes/logo-atractivo.png');
+  background-position: center;
+  background-size: cover;
+  width: 120px;
+  height: 120px;
+  position: relative;
+}
+
+.sobre-nosotros .sobre-nosotros-1 .display header{
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.sobre-nosotros .sobre-nosotros-1 .display main{
+  border: solid 2px #ddd;
+  border-radius: 10px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sobre-nosotros .sobre-nosotros-1 .display main section{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sobre-nosotros .sobre-nosotros-1 .display main section .title{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sobre-nosotros .sobre-nosotros-1 .display main section .title h3{
+  font-size: 2rem;
+}
+
+.sobre-nosotros .sobre-nosotros-1 .display main section .second-information{
+  text-align: justify;
+}
+
+.sobre-nosotros .sobre-nosotros-1 .display main section:nth-child(2){
+  flex-direction: row;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.sobre-nosotros .sobre-nosotros-1 .display main section:nth-child(2) span{
+  display: flex;
+  gap: 10px;
+}
+
+.sobre-nosotros .sobre-nosotros-1 .display main section:nth-child(2) span i{
+  color: #0072ff;
+}
+
+
 /* Contacto  */
 
 .contacto{
