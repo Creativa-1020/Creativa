@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/Creativa/static/css/main.dcc3beb8.css",
-    "main.js": "/Creativa/static/js/main.58afbfcf.js",
+    "main.css": "/Creativa/static/css/main.a29527c9.css",
+    "main.js": "/Creativa/static/js/main.80653311.js",
     "static/js/453.e7d76ea7.chunk.js": "/Creativa/static/js/453.e7d76ea7.chunk.js",
     "static/media/inicio-fondo.jpeg": "/Creativa/static/media/inicio-fondo.ff2a61b9ac0223c583b0.jpeg",
+    "static/media/logo-atractivo.png": "/Creativa/static/media/logo-atractivo.6b9f3ff57af7ab9ca174.png",
     "static/media/logo.png": "/Creativa/static/media/logo.f3bd22a5c4164f3e9700.png",
     "static/media/inicio-3.jpeg": "/Creativa/static/media/inicio-3.80cccfdeb6b77c1e8f7b.jpeg",
     "index.html": "/Creativa/index.html",
-    "main.dcc3beb8.css.map": "/Creativa/static/css/main.dcc3beb8.css.map",
-    "main.58afbfcf.js.map": "/Creativa/static/js/main.58afbfcf.js.map",
+    "main.a29527c9.css.map": "/Creativa/static/css/main.a29527c9.css.map",
+    "main.80653311.js.map": "/Creativa/static/js/main.80653311.js.map",
     "453.e7d76ea7.chunk.js.map": "/Creativa/static/js/453.e7d76ea7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.dcc3beb8.css",
-    "static/js/main.58afbfcf.js"
+    "static/css/main.a29527c9.css",
+    "static/js/main.80653311.js"
   ]
 }
