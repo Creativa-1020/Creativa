@@ -4,6 +4,7 @@ const About = () => {
   return (
     <div className='sobre-nosotros'>
       <About1 />
+      <About2 />
     </div>
   );
 };
@@ -53,6 +54,16 @@ const About1 = () => {
             }
           </section>
         </main>
+      </div>
+    </div>
+  )
+}
+
+const About2 = () => {
+  return(
+    <div className='sobre-nosotros-2'>
+      <div className='mini-nav'>
+        
       </div>
     </div>
   )

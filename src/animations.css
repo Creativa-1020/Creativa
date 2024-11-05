@@ -38,12 +38,12 @@
      animation: entrada-inicio-1 1s ease-in-out forwards;
 }
 
-.inicio-2 .problematicas .problematica-1, .inicio-2 .problematicas .problematica-2{
+.inicio-2 .problematicas .problematica-1, .inicio-2 .problematicas .problematica-2, .inicio-2 .problematicas .problematica-2{
      transform: translateY(200px);
      opacity: 0;
 }
 
-.inicio .inicio-2.visible .problematicas .problematica-1, .inicio .inicio-2.visible .problematicas .problematica-2{
+.inicio .inicio-2.visible .problematicas .problematica-1, .inicio .inicio-2.visible .problematicas .problematica-2, .inicio .inicio-2.visible .problematicas .problematica-3{
      animation: entrada-inicio-1 1s ease-in-out forwards;
 }
 
@@ -85,4 +85,9 @@
 
 .inicio-4 .information.visible .propuestas:nth-child(odd){
      animation: entrada-inicio-1 2s ease-in-out forwards;
+}
+
+.inicio .inicio-4 .information .propuestas:hover::before{
+     transform: translate(0);
+     transition: all 0.7s ease-in-out;
 }

@@ -166,7 +166,7 @@ body{
 
 .inicio-2{
   padding: 120px;
-  height: 80vh;
+  height: 100%;
   text-align: center;
 }
 
@@ -176,7 +176,8 @@ body{
 }
 
 .inicio-2 .problematicas{
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 40px;
 }
 
@@ -264,6 +265,7 @@ body{
   display: flex;
   background-color: #222;
   color: #fff;
+
 }
 
 .inicio .inicio-4 .information{
@@ -273,6 +275,7 @@ body{
   flex-direction: column;
   gap: 20px;
   display: grid;
+  position: relative;
 }
 
 
@@ -283,99 +286,267 @@ body{
   font-size: 4rem;
 }
 
-.inicio .inicio-4 .information .propuestas-section{
+.inicio .inicio-4 .information .propuestas-section {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+    "area1 area2 area3 area3"
+    "area4 area5 area3 area3"
+    "area6 area6 area7 area8"
+    "area6 area6 area9 area10"
+    "area11 area12 area13 area13"
+    "area14 area14 area14 area14";
   gap: 30px;
+  height: 150vh; /* Asegúrate de que esto sea apropiado */
 }
 
-.inicio .inicio-4 .information .propuestas{
+.inicio .inicio-4 .information .propuestas {
   border: solid 1px #aaaaaa;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  text-align: justify;
-}
-
-.inicio .inicio-4 .information .propuestas .header{
-  padding: 60px;
-  border-radius: 15px 15px 0 0; 
-  height: 25vh;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  gap: 20px;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.7s ease-in-out;
 }
 
-.inicio .inicio-4 .information .propuestas .header h2{
+.inicio .inicio-4 .information .propuestas .show-section {
   display: flex;
-  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
 }
 
-.inicio .inicio-4 .information .propuestas:nth-child(1) .header{
+/* Asegúrate de que el contenedor padre tenga position: relative */
+
+.inicio .inicio-4 .information .propuestas::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-radius: 15px;
+}
+
+/* Cambia el transform según la posición */
+.inicio .inicio-4 .information .propuestas:nth-child(odd)::before {
+  transform: translateX(-100%);
+}
+
+.inicio .inicio-4 .information .propuestas:nth-child(even)::before {
+  transform: translateX(100%);
+}
+
+/* Aplicar las áreas de grid directamente en los elementos propuestos */
+.inicio .inicio-4 .information .propuestas:nth-child(1) {
+  grid-area: area1; /* Asignando el área */
+}
+
+.inicio .inicio-4 .information .propuestas:nth-child(2) {
+  grid-area: area2; /* Asignando el área */
+}
+
+.inicio .inicio-4 .information .propuestas:nth-child(3) {
+  grid-area: area3; /* Asignando el área */
+}
+
+.inicio .inicio-4 .information .propuestas:nth-child(4) {
+  grid-area: area4; /* Asignando el área */
+}
+
+.inicio .inicio-4 .information .propuestas:nth-child(5) {
+  grid-area: area5; /* Asignando el área */
+}
+
+.inicio .inicio-4 .information .propuestas:nth-child(6) {
+  grid-area: area6; /* Asignando el área */
+}
+
+.inicio .inicio-4 .information .propuestas:nth-child(7) {
+  grid-area: area7; /* Asignando el área * /* Rosa a amarillo */
+}
+
+.inicio .inicio-4 .information .propuestas:nth-child(8) {
+  grid-area: area8; /* Asignando el área */ /* Rosa suave a durazno */
+}
+
+.inicio .inicio-4 .information .propuestas:nth-child(9) {
+  grid-area: area9; /* Asignando el área */ /* Verde a aqua */
+}
+
+.inicio .inicio-4 .information .propuestas:nth-child(10) {
+  grid-area: area10; /* Asignando el área */ /* Amarillo a naranja */
+  font-size: 0.7rem;
+}
+
+.inicio .inicio-4 .information .propuestas:nth-child(11) {
+  grid-area: area11; /* Asignando el área */ /* Morado a rosa */
+}
+
+.inicio .inicio-4 .information .propuestas:nth-child(12) {
+  grid-area: area12; /* Asignando el área */ /* Beige a coral */
+}
+
+.inicio .inicio-4 .information .propuestas:nth-child(13) {
+  grid-area: area13; /* Asignando el área */ /* Aqua a azul */
+}
+
+.inicio .inicio-4 .information .propuestas:nth-child(14) {
+  grid-area: area14; /* Asignando el área */
+
+}
+
+
+.inicio .inicio-4 .information .propuestas:nth-child(1)::before {
+  grid-area: area1; /* Asignando el área */
   background: linear-gradient(135deg, #ff7e5f, #feb47b);
 }
 
-.inicio .inicio-4 .information .propuestas:nth-child(2) .header{
+.inicio .inicio-4 .information .propuestas:nth-child(2)::before {
+  grid-area: area2; /* Asignando el área */
   background: linear-gradient(135deg, #43cea2, #185a9d);
 }
 
-.inicio .inicio-4 .information .propuestas:nth-child(3) .header{
+.inicio .inicio-4 .information .propuestas:nth-child(3)::before {
+  grid-area: area3; /* Asignando el área */
   background: linear-gradient(135deg, #f7ff00, #db36a4);
-
 }
 
-.inicio .inicio-4 .information .propuestas:nth-child(4) .header{
+.inicio .inicio-4 .information .propuestas:nth-child(4)::before {
+  grid-area: area4; /* Asignando el área */
   background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
 }
 
-.inicio .inicio-4 .information .propuestas:nth-child(5) .header{
+.inicio .inicio-4 .information .propuestas:nth-child(5)::before {
+  grid-area: area5; /* Asignando el área */
   background: linear-gradient(135deg, #f953c6, #b91d73);
-
 }
 
-.inicio .inicio-4 .information .propuestas:nth-child(6) .header{
-  background: linear-gradient(45deg, #00c6ff, #0072ff); 
+.inicio .inicio-4 .information .propuestas:nth-child(6)::before {
+  grid-area: area6; /* Asignando el área */
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
 }
 
-.inicio .inicio-4 .information .propuestas:nth-child(7) .header{
+.inicio .inicio-4 .information .propuestas:nth-child(7)::before {
+  grid-area: area7; /* Asignando el área */
   background: linear-gradient(45deg, #ff005c, #ffdb00); /* Rosa a amarillo */
 }
 
-.inicio .inicio-4 .information .propuestas:nth-child(8) .header {
+.inicio .inicio-4 .information .propuestas:nth-child(8)::before {
+  grid-area: area8; /* Asignando el área */
   background: linear-gradient(135deg, #ffafbd, #ffc3a0); /* Rosa suave a durazno */
 }
 
-.inicio .inicio-4 .information .propuestas:nth-child(9) .header {
+.inicio .inicio-4 .information .propuestas:nth-child(9)::before {
+  grid-area: area9; /* Asignando el área */
   background: linear-gradient(135deg, #43e97b, #38f9d7); /* Verde a aqua */
 }
 
-.inicio .inicio-4 .information .propuestas:nth-child(10) .header {
+.inicio .inicio-4 .information .propuestas:nth-child(10)::before {
+  grid-area: area10; /* Asignando el área */
   background: linear-gradient(135deg, #f6d365, #fda085); /* Amarillo a naranja */
 }
 
-.inicio .inicio-4 .information .propuestas:nth-child(11) .header {
+.inicio .inicio-4 .information .propuestas:nth-child(11)::before {
+  grid-area: area11; /* Asignando el área */
   background: linear-gradient(135deg, #a18cd1, #fbc2eb); /* Morado a rosa */
 }
 
-.inicio .inicio-4 .information .propuestas:nth-child(12) .header {
+.inicio .inicio-4 .information .propuestas:nth-child(12)::before {
+  grid-area: area12; /* Asignando el área */
   background: linear-gradient(135deg, #ffecd2, #fcb69f); /* Beige a coral */
 }
 
-.inicio .inicio-4 .information .propuestas:nth-child(13) .header {
+.inicio .inicio-4 .information .propuestas:nth-child(13)::before {
+  grid-area: area13; /* Asignando el área */
   background: linear-gradient(135deg, #00d2ff, #3a7bd5); /* Aqua a azul */
 }
 
+.inicio .inicio-4 .information .propuestas:nth-child(14)::before {
+  grid-area: area14; /* Asignando el área */
+  background: linear-gradient(135deg, #11998e, #38ef7d);
 
-.inicio .inicio-4 .information .propuestas ul{
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 0 60px 60px 60px;
 }
+
+.inicio .inicio-4 .information .propuestas .show-section h3{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.modal-section{
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  z-index: 1000; /* Asegura que esté encima de otros elementos */ /* Fondo del modal */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  width: 100%; /* Ajusta el ancho según necesites */
+  overflow: visible;
+  height: 100vh;
+}
+
+.modal-section .background{
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.modal-section .information{
+  width: 70%;
+  line-height: 30px;
+
+}
+
+.modal-section .information h2{
+  display: block;
+  font-size: 3.5rem;
+  text-align: center;
+  line-height:60px;
+}
+
+.modal-section .information h3{
+  text-align: center;
+
+}
+
+.modal-section .information section{
+  width: 100%;
+  padding: 30px;
+  height: 100vh;
+}
+
+.modal-section .information section ul{
+  
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.modal-section button{
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  padding: 10px 30px;
+  cursor: pointer;
+  z-index: 1000;
+  font-size: 2rem;
+  border: solid 2px #ddd;
+  border-radius: 10px;
+  background: transparent;
+  color: #fff;
+}
+
 
 /* Sobre Nosotros */
 
@@ -456,7 +627,6 @@ body{
 .sobre-nosotros .sobre-nosotros-1 .display main section:nth-child(2) span i{
   color: #0072ff;
 }
-
 
 /* Contacto  */
 

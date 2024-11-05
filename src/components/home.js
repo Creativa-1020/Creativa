@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect} from 'react';
+import React, {useState, useRef, useEffect, createContext, useContext} from 'react';
 
 const Home1 = () => {
 
@@ -72,8 +72,9 @@ const Home2 = () => {
             <h3>Rendimiento Académico</h3>
           </div>
           <div className='main'>
-            <p>El colegio carece de fuerza en los ambitos de estudio matematico, comunicacional y cientifico, necesarios 
-              para postulacion a becas, examenes de admision y conocimientos basicos previos a la universidad. </p>
+            <p>Falta de preparación académica de alta exigencia dentro de la institución o material de la misma; 
+              pese a que aplicaciones como aleks o khan academy ofrecen estas oportunidades en cierta medida siguen 
+              si ser recursos suficientes para los estudiantes que buscan por formación preuniversitaria; (educación integral)</p>
           </div>
         </div>
         <div className='problematica-2' style={{animationDelay: "0.5s"}}>
@@ -82,19 +83,53 @@ const Home2 = () => {
             <h3>Higiene</h3>
           </div>
           <div className='main'>
-            <p>Los baños y salones por los mismos estudiantes dejan de estar pulcros y no se han tomado medidas efectivas 
-            para evitarlo aún.</p>
+            <p>La negligencia de los estudiantes sobre el desperdicio de residuos aprovechables y no aprovechables 
+              que generan un mal hábito hacia los estudiantes al igual que un mal aspecto en el aula;</p>
           </div>
         </div>
-        <div className='problematica-1' style={{animationDelay: "0.7s"}}>
-        <div className='header'>
-          <span><i class="fa-solid fa-palette"></i></span>
-          <h3>Habilidades Artisticas</h3>
+        <div className='problematica-3' style={{animationDelay: "0.7s"}}>
+          <div className='header'>
+            <span><i class="fa-solid fa-palette"></i></span>
+            <h3>Habilidades Artisticas</h3>
+          </div>
+          <div className='main'>
+            <p>La falta de apoyo para el arte en la institución, el cual es necesario tanto por los cursos que se realizan 
+              como para las actividades mismas de los estudiantes y a su vez entorpece el trabajo así como la creatividad 
+              e iniciativa en la materia musical; (arte y cultura)</p>
+          </div>
         </div>
-        <div className='main'>
-          <p>Tanto la lectura, el arte y relacionados aun estan en proceso de integracion en el colegio 
-          pese a que se les de fuerza, vamos a potenciarla</p>
+        <div className='problematica-4' style={{animationDelay: "0.7s"}}>
+          <div className='header'>
+            <span><i class="fa-solid fa-feather"></i></span>
+            <h3>Literatura</h3>
+          </div>
+          <div className='main'>
+            <p>Carencia de variedad literaria en el carrito de biblioteca de la escuela que abrió puertas a una variedad 
+              de experiencias y perspectivas incluidas las del arte mismo; la falta de ello significa un no aprovechamiento
+              de todo su potencial para formar una mente crítica y creativa en los escolares; (formación integral)</p>
+          </div>
         </div>
+        <div className='problematica-5' style={{animationDelay: "0.7s"}}>
+          <div className='header'>
+            <span><i class="fa-solid fa-palette"></i></span>
+            <h3>Pérdidas de objetos</h3>
+          </div>
+          <div className='main'>
+            <p>Las constantes pérdidas de materiales en el salón de clases representa un desafío significativo 
+              para el proceso educativo , afectando tanto la disponibilidad de recursos como el rendimiento académico 
+              de los estudiantes;(vida comunitaria  y derecho de los estudiantes)  </p>
+          </div>
+        </div>
+        <div className='problematica-6' style={{animationDelay: "0.7s"}}>
+          <div className='header'>
+            <span><i class="fa-solid fa-medal"></i></span>
+            <h3>Voto en Olimpiadas</h3>
+          </div>
+          <div className='main'>
+            <p>La falta de opinión y voto por parte de los estudiantes para los periodos de olimpiadas a demostrado ser 
+              un impedimento para la misma realización de las actividades de estas y reduce el interés por ellas al tener 
+              varias pocas popularidad o aceptación;</p>
+          </div>
         </div>
       </div>
     </div>
@@ -151,34 +186,34 @@ const Home3 = () => {
   )
 }
 
+const ThemeContext = createContext(null)
+
 const Home4 = () => {
 
   const mainRef = useRef(null);
   const mainRef1 = useRef(null)
 
+  const [modal, setModal] = useState(null);
+
   useEffect(() => {
-    // Define la función de callback para el IntersectionObserver
     const callback = (entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          console.log("El elemento se ve")
         } else {
           entry.target.classList.remove('visible');
         }
       });
     };
 
-    // Configura el IntersectionObserver
     const options = {
       root: null,
       rootMargin: '0px',
-      threshold: 0.1 // Cambia el umbral según tus necesidades
+      threshold: 0.1,
     };
 
     const observer = new IntersectionObserver(callback, options);
 
-    // Observa el elemento referenciado
     if (mainRef.current) {
       observer.observe(mainRef.current);
     }
@@ -187,7 +222,6 @@ const Home4 = () => {
       observer.observe(mainRef1.current);
     }
 
-    // Limpieza del observer al desmontar el componente
     return () => {
       if (mainRef.current) {
         observer.unobserve(mainRef.current);
@@ -205,12 +239,11 @@ const Home4 = () => {
       proposito: "Ampliación de nuevas ramas en la educación (Eduación Financiera, Programación, etc)",
       datos: [
         "Inversión: Baja - Tiempo: Medio", 
-        "Mentores: Alumnos con habilidades destacadas en un rubro. Pueden brindar clases en vivo o grabadas. (Clases grabadas de 5 min cada clase)",
+        "Mentores: Alumnos con habilidades destacadas en un rubro. Pueden brindar clases en vivo o grabadas para compartirlo en un drive dirigido a personas que quisieran aprender algo nuevo. (Clases grabadas de 5 min cada clase)",
         "Es eficiente porque el estudiante a la hora de ver a fondo el tema, poco a poco se dará cuenta de la carrera que va a estudiar. ",
         "El estudiante aprenderá a resolver problemas de la vida con los conocimientos brindados en las clases.",
         "Organizaciones como la Unicef (Unicef, 2019, 21st Century Education), la Harvard Business Review, informan sobre la importancia de este tipo de enseñanzas en las instituciones educativas.",
         "El estudiante tendrá la oportunidad de presenciar el amplio panorama laboral del rubro al que optó por inscribirse.",
-        "El estudiante desarrollará pensamiento crítico, mejorando su para resolver problemas del día a día (repetida)",
         "Al añadir nuevas ramas educativas, los estudiantes van presenciando y adaptándose al constante cambio que el mundo está dando"
       ],
       activo: false,
@@ -219,14 +252,10 @@ const Home4 = () => {
     {
       nombre: "Educación Z",
       icono: <i class="fa-solid fa-book"></i>,
-      proposito: "Preparación preuniversitaria (Exámenes Simulacros, temas que vienen en los exámenes, etc)",
+      proposito: "Ofrecer material preuniversitaria (Exámenes Simulacros, temas que vienen en los exámenes, etc)",
       datos: [
-        "Inversión: Baja - Tiempo: Medio",
-        "Los estudiantes tendrán acceso a material educativo para la preparación de los exámenes simulacros o de admisión y/o exámenes pasados de admisión.",
-        "Los estudiantes aprenden a gestionar mejor su tiempo a la hora de resolver cada pregunta.",
-        "Los estudiantes tendrán mayor autocontrol a la hora de resolver un examen debido a la frecuencia con la que lo resolverán.",
-        "Los estudiantes desarrollaran habilidades para la resolución de problemas no solo para el examen, sino también para el día a día.",
-        "Los estudiantes desarrollaran estrategias de respuestas para resolver más rápido y correctamente exámenes.",
+        "Inversión: Baja - Tiempo: Bajo",
+        "Los estudiantes tendrán acceso a material educativo para la preparación de los exámenes simulacros o de admisión y/o exámenes pasados de admisión.",        "Los estudiantes tendrán mayor autocontrol a la hora de resolver un examen debido a la frecuencia con la que lo resolverán.",
         "Los estudiantes identificarán sus puntos fuertes y débiles a la hora de dar exámen."
       ],
       activo: false,
@@ -313,19 +342,6 @@ const Home4 = () => {
       progreso: null
     },
     {
-      nombre: "Doble de visitas de estudio anuales",
-      icono: <i class="fa-solid fa-location-dot"></i>,
-      proposito: "Ofrecer a los estudiantes una mayor profundidad en el aprendizaje mediante visitas de estudio académicas",
-      datos: [
-        "Inversión: Nula",
-        "Atractivo: Las visitas de estudio brindan un espacio académico con mayor profundidad que el aula debido a la interacción.",
-        "Beneficios: Promueven el desarrollo de habilidades sociales, estimulan el aprendizaje experiencial, fomentan la conciencia medioambiental y facilitan la comprensión de la información, según estudios del Colegio Beltor Brecht y el Colegio Peruano Británico.",
-        "Implementación: Al final de los bimestres 2 y 4 se llevará a cabo la recaudación económica y el registro del alumnado. Los destinos serán supervisados por el equipo directivo y el municipio escolar para asegurar su utilidad académica."
-      ],
-      activo: false,
-      progreso: null
-    },
-    {
       nombre: "Reforzamiento de proliferación de concursos y ferias nacionales",
       icono: <i class="fa-solid fa-award"></i>,
       proposito: "Brindar oportunidades de estudio y desarrollo académico mediante la participación en concursos y ferias nacionales",
@@ -374,7 +390,7 @@ const Home4 = () => {
       progreso: null
     },
     {
-      nombre: "Concursos Temáticos elaborados por materiales reciclados",
+      nombre: "Promocionar concursos Temáticos elaborados por materiales reciclados",
       icono: <i class="fa-solid fa-tree"></i>,
       proposito: "Fomentar la creatividad y el buen uso de materiales reciclados a través de concursos temáticos",
       datos: [
@@ -390,52 +406,113 @@ const Home4 = () => {
       activo: false,
       progreso: null
     },
+
     {
-      nombre: "Elaboración de pequeños huertos / realizar cuidado de plantas en la institución",
-      icono: <i class="fa-solid fa-leaf"></i>,
-      proposito: "Fomentar la responsabilidad y el cuidado del medio ambiente mediante la elaboración de huertos escolares",
+      nombre: "Museo Escolar Voluntariado",
+      icono: <i class="fa-solid fa-landmark"></i>,
+      proposito: "Creación de un museo escolar a través de la colaboración voluntaria de estudiantes",
       datos: [
-        "Costo: Bajo",
-        "Tiempo: Medio",
-        "Mentores: Alumnos voluntarios y aquellos interesados en áreas verdes y plantas.",
-        "Eficiencia: Los estudiantes mejorarán su responsabilidad al cuidar de una planta asignada.",
-        "Aprendizaje: Aprenderán sobre el cuidado adecuado de las plantas y sus beneficios.",
-        "Entretenimiento: Se divertirán cuidando su planta, y contar con instrumentos de cuidado hará la actividad más dinámica.",
-        "Aumento de espacios verdes: La implementación de huertos o plantas asignadas incrementará los espacios naturales en el entorno escolar."
+        "Inversión: Baja-Media - Tiempo: Alto",
+        "Participación: Los estudiantes podrán contribuir con proyectos o colecciones personales para la exhibición.",
+        "Fomento cultural: Este museo permitirá explorar temas históricos, científicos o de arte que enriquecen el aprendizaje escolar.",
+        "Desarrollo de habilidades sociales: Los estudiantes aprenderán a colaborar y organizar eventos.",
+        "Educación alternativa: Se fomenta el aprendizaje visual y práctico, complementando las enseñanzas tradicionales.",
+        "Visibilidad y reconocimiento: Los estudiantes tendrán un espacio para mostrar sus trabajos y talentos.",
+        "Ambiente enriquecedor: La presencia del museo escolar añade valor al ambiente educativo, estimulando el interés y la curiosidad de toda la comunidad.",
+        "Organización de eventos: Se pueden organizar eventos de apertura para nuevas exhibiciones con invitación a familiares y amigos."
       ],
       activo: false,
       progreso: null
-    }    
+    },
+    {
+      nombre: "Nuevo Diseño de Tachos para Aulas",
+      icono: <i class="fa-solid fa-recycle"></i>,
+      proposito: "Implementación de un diseño atractivo para los tachos de basura en las aulas para promover el reciclaje",
+      datos: [
+        "Inversión: Baja - Tiempo: Bajo",
+        "Diseño inclusivo: Los tachos estarán diseñados para diferenciar tipos de residuos (papel, plástico, orgánico).",
+        "Conciencia ambiental: Fomenta la separación de residuos desde temprana edad, promoviendo una cultura de reciclaje.",
+        "Estudiantes como agentes de cambio: Los alumnos participan en el diseño y decoración de los tachos, fortaleciendo su compromiso ambiental.",
+        "Ambiente limpio y ordenado: Facilita la disposición correcta de los residuos, mejorando la limpieza de las aulas.",
+        "Educación continua: Carteles informativos sobre tipos de desechos y su impacto ambiental estarán disponibles cerca de los tachos.",
+        "Incentivo al orden: Un sistema de puntos puede ser implementado para aulas que mantengan los tachos organizados.",
+        "Creatividad y personalización: Los tachos pueden ser decorados con diseños personalizados por los estudiantes, reflejando la identidad de cada aula."
+      ],
+      activo: false,
+      progreso: null
+    },
+    {
+      nombre: "Clean & Green Challenge",
+      icono: <i class="fa-solid fa-toilet"></i>,
+      proposito: "Fomentar la limpieza y el mantenimiento de los baños escolares mediante concursos",
+      datos: [
+        "Costo: Bajo",
+        "Tiempo: Medio",
+        "Descripción: Incentivar a los estudiantes a mantener los baños limpios a través de un sistema de premios y reconocimiento.",
+        "Promover hábitos de higiene: Se fomenta la responsabilidad y el cuidado en el uso de espacios comunes.",
+        "Premios e incentivos: Los estudiantes pueden ganar premios como un 'Día sin uniforme', material educativo o puntos extra."
+      ],
+      activo: false,
+      progreso: null
+}
 
   ])
 
   return(
-    <div className='inicio-4'>
-      <div className='imagen'></div>
-      <div className='information' ref={mainRef}>
-        <h1>Propuestas</h1>
-        <div className='propuestas-section'>
-          {
-            propuestas.map((element)=>(
-              <div className='propuestas' ref={mainRef1}>
-                <div className='header'>
-                  <h2><span>{element.icono}</span>{element.nombre}</h2>
-                  <h4>{element.proposito}</h4>
-                </div>
-                <div className='main'>
-                  <ul>
-                    {element.datos.map((element)=> (
-                      <li>{element}</li>
-                    ))}
-                  </ul>
+    <ThemeContext.Provider value={modal}>
+      <div className='inicio-4'>
+        <div className='imagen'></div>
+        <div className='information' ref={mainRef}>
+          <h1>Propuestas</h1>
+          <div className='propuestas-section'>
+            {propuestas.map((element, index) => (
+              <div
+                key={index} // Agregar una key única
+                className='propuestas'
+                ref={mainRef1}
+                onClick={() => {
+                  setModal(element); // Establece el modal cuando se hace clic
+                }}
+              >
+                <div className='show-section'>
+                  <h3>{element.nombre}{element.icono}</h3>
                 </div>
               </div>
-            ))
-          }
+            ))}
+          </div>
+          <Modal closeModal={()=>setModal(null)}/>
         </div>
       </div>
-    </div>
+    </ThemeContext.Provider>
   )
+
+}
+
+const Modal = ({closeModal}) => {
+
+  let modalQuery = useContext(ThemeContext)
+
+  if (modalQuery) {
+    return (
+      <div className='modal-section'>
+        <div className='background'></div>
+        <button onClick={closeModal}>X</button>
+        <div className='information'>
+          <h2>{modalQuery.nombre}</h2> {/* Muestra el nombre de la propuesta en el modal */}
+          <h3>{modalQuery.proposito}</h3> {/* Muestra el propósito de la propuesta */} 
+          <section>
+            <ul>
+              {modalQuery.datos.map((element)=> (
+                <li>{element}</li>
+              ))}
+            </ul>
+          </section>     
+        </div>
+      </div>
+    );
+  }
+
+  return null
 }
 
 const Home = () => {
